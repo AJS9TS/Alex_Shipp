@@ -1,8 +1,8 @@
 ---
 title: "FPL Manager Assistant"
 subtitle: "A Snowflake-native ontology platform Snowflake from a warehouse into a platform capable of using decision intelligence to support FPL managers in selecting their FPL teams, backed by data."
-slug: etoro-portfolio-project
-model_name: "mart_etoro_portfolio"
+slug: fpl-analyst-project
+model_name: "fpl_analyst"
 summary: "A Snowflake Cortex Analyst solution leveraging ontologies to deliver decision intelligence."
 order: 2
 thumbnail: /assets/images/projects/fpl/fpl_analyst_thumbnail.png
