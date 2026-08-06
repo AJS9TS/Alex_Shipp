@@ -12,7 +12,6 @@ code_url: "https://github.com/SYellops01/fpl_analyst"
 ---
 <img width="1068" height="561" alt="image" src="https://github.com/user-attachments/assets/00a9328f-bcf0-4330-b8c4-e47b01241341" />
 
-
 ## The Problem
 
 Winning your FPL mini-league isn’t just about picking good players, but about consistently making better decisions than your competitors. With increasingly complex scoring rules, form metrics, and fixture difficulty, it’s hard to quickly identify which players offer the best value within budget.
