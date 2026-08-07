@@ -1,12 +1,12 @@
 ---
-title: "Finance Self Service Analytics"
-subtitle: "A self-service reporting solution unlocking analytics for 50+ analysts at Belron"
-slug: clearight_self_service
-model_name: "clearight_self_service"
-summary: "A self-service reporting solution unlocking analytics for 50+ analysts at Belron"
+title: "Front Office Model Office"
+subtitle: "Established a standardised reporting model to support operational and commercial insights across Business Units."
+slug: front_office_model_office
+model_name: "front_office_model_office"
+summary: "A standardised data model and Snowflake views used for global reporting."
 order: 2
-thumbnail: /assets/images/projects/clearsight/clearsight_thumb.png
-stack: ["Tableau", "Snowflake", "FP&A", "Agile Product Delivery"]
+thumbnail: 
+stack: ["Snowflake", "FP&A", "Agile Product Delivery"]
 demo_url: ""
 
 sections:
