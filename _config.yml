@@ -1,31 +1,24 @@
-title: "Sam Yellops"
-tagline: "Data Consultant"
-description: "A Data Consultant with over 3 years of proven experience across the analytics lifecycle, delivering successful, scalable data products tied directly to business outcomes."
+title: "Alex Shipp"
+tagline: "Business Analyst"
+description: "A Business Analyst with over 3 years of proven experience across the analytics lifecycle, delivering successful, scalable data products tied directly to business outcomes."
 
-email: "sam.yellops@gmail.com"
-linkedin: "https://www.linkedin.com/in/sam-yellops01"
-github: "https://github.com/SYellops01"         
+email: "alexshipp@hotmail.co.uk"
+linkedin: ""
+github: ""         
 resume_url: ""                                     
 
 bio: >
-  I'm a commercially-minded Data Consultant and Economics Graduate with a proven record of transforming raw data into scalable, 
-  business-ready products across business functions. 
-  Experienced across the analytics lifecycle, I bridge the gap between client requirements and technical delivery, 
-  combining domain knowledge with technical capability in SQL, Platform Engineering (Snowflake Core Certified) 
-  and Business Intelligence to architect successful data products - recent highlights include applying LLM-based analysis at scale to identify opportunities to reduce incoming call centre volumes by 10% 
-  and building a semantic layer unlocking self-service reporting for 50+ analysts.
+  I'm an enthusiastic Business analyst.  
 
 skills:
-  - dbt
-  - SQL
-  - Snowflake (SnowPro Core Certified)
-  - Business Intelligence
-  - Python
-  - Data Modelling
+  - Project Management
   - Agile Product Delivery
   - Stakeholder Engagement
   - Requirements Elicitation
-  - Value Realisation
+  - Backlog Refinement
+  - Quarterly Planning and Prioritisation
+  - Workshop Facilitation
+  - Data Analysis
 
 # ------------------------------------------------------------------
 # Site plumbing — layouts and styles to follow for each section
