@@ -1,0 +1,31 @@
+---
+title: "Front Office Model Office"
+subtitle: "Established a standardised reporting model to support operational and commercial insights across Business Units."
+slug: front_office_model_office
+model_name: "front_office_model_office"
+summary: "A standardised data model and Snowflake views used for global reporting."
+order: 1
+thumbnail: 
+stack: ["Business Analysis", "Requirements Elicitation", "Stakeholder Management", "Churn Rate", "Project Management", "Agile Product Delivery", "Snowflake"]
+demo_url: ""
+
+sections:
+  - number: "01"
+    heading: "Problem Statement"
+    paragraphs:
+      - "A Business with a number of subsidiary companies and different reporting teams can result in discrepancies in how Churn rate and other metrics are calculated."
+      - "Different reporting solutions that have different metrics, different calculations, and different appearances can reduce the ability to analyse improvements or reductions."
+
+  - number: "02"
+    heading: "The Solution"
+    paragraphs:
+      - "We built a Global data model that utilises the assets in the Enterprise Logical Data Model in order to standardise Churn Rate reporting across all subsidiary companies."
+      - "I authored the Functional Specification capturing all reporting requirements, then collaborated with data modellers and developers to ingest CRM data, design a global data model, and deliver the Snowflake views to satisfy both local and global reporting."
+
+  - number: "03"
+    heading: "Impact"
+    list:
+      - "Unified churn rate calculation across multiple business units, resolving conflicting definitions into one governed metric."
+      - "Established data governance framework with named stewards, lineage documentation, and certified metric definitions."
+
+---
