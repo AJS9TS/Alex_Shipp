@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Log changes on save",
+      "trigger": "PostFileSave",
+      "description": "Appends the filename and timestamp to CHANGELOG.md every time a file is saved, creating a breadcrumb trail for commit messages.",
+      "action": {
+        "type": "command",
+        "command": "powershell -Command \"$file = $args[0]; $timestamp = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'; Add-Content -Path 'CHANGELOG.md' -Value \\\"- [$timestamp] Saved: $file\\\"\""
+      }
+    }
+  ]
+}

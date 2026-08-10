@@ -28,7 +28,7 @@ html {
 
 body {
   margin: 0;
-  background: linear-gradient(to bottom, var(--bg) 0%, #8FAF8B 100%);
+  background: linear-gradient(to bottom, var(--bg) 0%, #5C7A5A 100%);
   background-attachment: fixed;
   color: var(--ink);
   font-family: var(--font-body);
@@ -196,6 +196,12 @@ section + section { border-top: 1px solid var(--line); }
   padding: 6px 12px;
   border-radius: 6px;
   color: var(--ink-soft);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  cursor: default;
+}
+.skills li:hover {
+  transform: translateY(-3px);
+  border-color: var(--teal);
 }
 
 /* ------------------------------------------------------------------
