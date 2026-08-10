@@ -2,15 +2,15 @@
    Design tokens
 ------------------------------------------------------------------ */
 :root {
-  --bg: #F7F8F6;
-  --bg-raised: #FFFFFF;
-  --ink: #14181B;
-  --ink-soft: #4B5359;
-  --muted: #6B7280;
-  --line: #DCE0DD;
-  --teal: #2E6F6B;
-  --teal-dark: #1F4F4C;
-  --amber: #C97A2E;
+  --bg: #0A1F1A;
+  --bg-raised: #122B24;
+  --ink: #E8F0EC;
+  --ink-soft: #9BB5A8;
+  --muted: #6B8F7E;
+  --line: #1E3D33;
+  --teal: #4FD1B0;
+  --teal-dark: #38C49A;
+  --amber: #F6C254;
 
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
