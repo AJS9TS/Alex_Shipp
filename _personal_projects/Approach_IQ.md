@@ -5,7 +5,7 @@ slug: Approach_IQ
 model_name: "Golf_Game"
 summary: "An HTML project that allows users to edit the way they're practising their golf game.  "
 order: 1
-thumbnail: /assets/images/projects/Approach_IQ/Approach_IQ.svg
+thumbnail: /assets/images/projects/Approach_IQ/Approach_IQ.webp
 stack: ["Vibe Coding", "AWS Kiro", "AI", "HTML", "Github"]
 demo_url: ""
 code_url: "https://github.com/AJS9TS/Approach_IQ"
