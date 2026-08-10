@@ -28,7 +28,7 @@ html {
 
 body {
   margin: 0;
-  background: linear-gradient(to bottom, var(--bg) 0%, #2C3E2D 100%);
+  background: linear-gradient(to bottom, var(--bg) 0%, #8FAF8B 100%);
   background-attachment: fixed;
   color: var(--ink);
   font-family: var(--font-body);
@@ -415,6 +415,10 @@ section + section { border-top: 1px solid var(--line); }
 /* ------------------------------------------------------------------
    Responsive
 ------------------------------------------------------------------ */
+@media (min-width: 1600px) {
+  :root { --max-width: 1320px; }
+}
+
 @media (max-width: 560px) {
   .hero { padding: 56px 0 40px; }
   section { padding: 40px 0; }
