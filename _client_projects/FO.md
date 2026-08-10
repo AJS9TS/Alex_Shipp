@@ -5,7 +5,7 @@ slug: front_office_model_office
 model_name: "front_office_model_office"
 summary: "A standardised data model and Snowflake views used for global reporting."
 order: 1
-thumbnail: /assets/images/projects/FO/Conversion.webp
+thumbnail: /assets/images/projects/FO/Conversion.png
 stack: ["Business Analysis", "Requirements Elicitation", "Stakeholder Management", "Conversion Rate", "Project Management", "Agile Product Delivery", "Snowflake"]
 demo_url: ""
 
