@@ -168,10 +168,10 @@ p { margin: 0 0 1em; }
 }
 .btn-primary:hover { background: var(--teal); text-decoration: none; }
 .btn-secondary {
-  border: 1px solid var(--line);
-  color: var(--ink) !important;
+  border: 1px solid var(--teal);
+  color: var(--teal) !important;
 }
-.btn-secondary:hover { border-color: var(--teal); text-decoration: none; }
+.btn-secondary:hover { border-color: var(--amber); color: var(--amber) !important; text-decoration: none; }
 
 /* ------------------------------------------------------------------
    Sections

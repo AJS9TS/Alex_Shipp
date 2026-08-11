@@ -4,10 +4,10 @@
     {
       "name": "Log changes on save",
       "trigger": "PostFileSave",
-      "description": "Appends the filename and timestamp to CHANGELOG.md every time a file is saved, reading the file path from stdin JSON context.",
+      "description": "Debug version - logs full stdin context to CHANGELOG.md to identify the correct field name.",
       "action": {
         "type": "command",
-        "command": "powershell -Command \"$input = [Console]::In.ReadToEnd(); $json = $input | ConvertFrom-Json; $file = $json.filePath; $timestamp = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'; Add-Content -Path 'CHANGELOG.md' -Value \\\"- [$timestamp] Saved: $file\\\"\""
+        "command": "powershell -Command \"$data = [Console]::In.ReadToEnd(); $timestamp = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'; Add-Content -Path 'CHANGELOG.md' -Value \\\"- [$timestamp] $data\\\"\""
       }
     }
   ]
