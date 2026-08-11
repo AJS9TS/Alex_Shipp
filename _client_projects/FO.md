@@ -15,10 +15,12 @@ sections:
     paragraphs:
       - "A Business with a number of subsidiary companies and different reporting teams can result in discrepancies in how Conversion rate and other metrics are calculated."
       - "Different reporting solutions that have different metrics, different calculations, and different appearances can reduce the ability to analyse improvements or reductions."
+      - "This leads to metrics being restated after the fact, time spent trying to figure out why two reports don't match, and a reduction of trust of the numbers."
 
   - number: "02"
     heading: "The Solution"
     paragraphs:
+      - "I helped run, and independently ran workshops to understand the new customer journey, the critical tables and attributes within the CRM, and helped define the attributes that should be used for Global Conversion Reporting."
       - "We built a Global data model that utilises the assets in the Enterprise Logical Data Model in order to standardise Conversion Rate reporting across all subsidiary companies."
       - "I authored the Functional Specification capturing all reporting requirements, then collaborated with data modellers and developers to ingest CRM data, design a global data model, and deliver the Snowflake views to satisfy both local and global reporting."
 
@@ -26,6 +28,7 @@ sections:
     heading: "Impact"
     list:
       - "Unified Conversion rate calculation across multiple business units, resolving conflicting definitions into one governed metric."
+      - "ELDM-aligned Data available for global and local reporting."
       - "Established data governance framework with named stewards, lineage documentation, and certified metric definitions."
 
 ---
