@@ -434,6 +434,36 @@ section + section { border-top: 1px solid var(--line); }
 }
 
 /* ------------------------------------------------------------------
+   Coming soon card
+------------------------------------------------------------------ */
+.project-card--soon {
+  border: 1px dashed var(--line);
+  opacity: 0.7;
+}
+.project-card--soon .card-link {
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.project-thumb--soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.coming-soon-label {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+
+/* ------------------------------------------------------------------
    Scroll-reveal animations
 ------------------------------------------------------------------ */
 .reveal {
