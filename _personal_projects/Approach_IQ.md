@@ -8,7 +8,7 @@ summary: "A golf practice app that tracks shot data to pinpoint weaknesses and g
 order: 1
 thumbnail: /assets/images/projects/Approach_IQ/Approach_IQ.webp
 stack: ["Vibe Coding", "AWS Kiro", "AI", "HTML", "Github"]
-demo_url: ""
+demo_url: "https://ajs9ts.github.io/APPROACH_IQ/"
 code_url: "https://github.com/AJS9TS/Approach_IQ"
 
 gallery:

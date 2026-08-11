@@ -448,7 +448,7 @@ section + section { border-top: 1px solid var(--line); }
 .carousel {
   margin-top: 48px;
   padding-top: 32px;
-  border-top: 1px solid var(--line);
+  padding-bottom: 48px;
 }
 .carousel h2 {
   font-size: 22px;
@@ -508,6 +508,11 @@ section + section { border-top: 1px solid var(--line); }
 }
 .carousel-header h2 {
   margin: 0;
+}
+.carousel-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 .carousel-dots {
   display: flex;

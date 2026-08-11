@@ -48,9 +48,14 @@ layout: default
   <div class="carousel">
     <div class="carousel-header">
       <h2>Screenshots</h2>
-      {% if page.code_url and page.code_url != "" %}
-      <a class="btn btn-secondary" href="{{ page.code_url }}" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-      {% endif %}
+      <div class="carousel-links">
+        {% if page.demo_url and page.demo_url != "" %}
+        <a class="btn btn-primary" href="{{ page.demo_url }}" target="_blank" rel="noopener">View live app &rarr;</a>
+        {% endif %}
+        {% if page.code_url and page.code_url != "" %}
+        <a class="btn btn-secondary" href="{{ page.code_url }}" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        {% endif %}
+      </div>
     </div>
     <div class="carousel-track" id="carouselTrack">
       {% for image in page.gallery %}
