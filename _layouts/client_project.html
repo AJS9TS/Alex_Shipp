@@ -46,14 +46,49 @@ layout: default
 
   {% if page.gallery %}
   <div class="carousel">
-    <h2>Screenshots</h2>
-    <div class="carousel-track">
+    <div class="carousel-header">
+      <h2>Screenshots</h2>
+      {% if page.code_url and page.code_url != "" %}
+      <a class="btn btn-secondary" href="{{ page.code_url }}" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+      {% endif %}
+    </div>
+    <div class="carousel-track" id="carouselTrack">
       {% for image in page.gallery %}
-      <div class="carousel-slide">
+      <div class="carousel-slide" id="slide-{{ forloop.index0 }}">
         <img src="{{ image.src }}" alt="{{ image.alt }}" />
       </div>
       {% endfor %}
     </div>
+    <div class="carousel-dots">
+      {% for image in page.gallery %}
+      <button class="carousel-dot{% if forloop.first %} active{% endif %}" aria-label="Go to slide {{ forloop.index }}" data-slide="{{ forloop.index0 }}"></button>
+      {% endfor %}
+    </div>
   </div>
+  <script>
+    (function() {
+      const track = document.getElementById('carouselTrack');
+      const dots = document.querySelectorAll('.carousel-dot');
+      dots.forEach(function(dot) {
+        dot.addEventListener('click', function() {
+          const slide = document.getElementById('slide-' + this.dataset.slide);
+          track.scrollTo({ left: slide.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+        });
+      });
+      track.addEventListener('scroll', function() {
+        const scrollLeft = track.scrollLeft;
+        const slides = track.querySelectorAll('.carousel-slide');
+        let closest = 0;
+        let minDist = Infinity;
+        slides.forEach(function(slide, i) {
+          const dist = Math.abs(slide.offsetLeft - track.offsetLeft - scrollLeft);
+          if (dist < minDist) { minDist = dist; closest = i; }
+        });
+        dots.forEach(function(d, i) {
+          d.classList.toggle('active', i === closest);
+        });
+      });
+    })();
+  </script>
   {% endif %}
 </div>
