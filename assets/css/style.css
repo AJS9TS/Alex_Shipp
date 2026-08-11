@@ -434,12 +434,49 @@ section + section { border-top: 1px solid var(--line); }
 }
 
 /* ------------------------------------------------------------------
+   Scroll-reveal animations
+------------------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for child elements */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ------------------------------------------------------------------
+   Page transitions
+------------------------------------------------------------------ */
+body {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+body.page-leaving {
+  opacity: 0;
+}
+
+/* ------------------------------------------------------------------
    Reduced motion
 ------------------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .project-card { transition: none; }
   .carousel-track { scroll-behavior: auto; }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  body { transition: none; }
+  body.page-leaving { opacity: 1; }
 }
 
 /* ------------------------------------------------------------------
