@@ -36,5 +36,17 @@
     </div>
   </footer>
 
+  <script>
+  document.addEventListener('mouseover', function(e) {
+    const link = e.target.closest('a');
+    if (link && link.href && !link.dataset.prefetched) {
+      const prefetch = document.createElement('link');
+      prefetch.rel = 'prefetch';
+      prefetch.href = link.href;
+      document.head.appendChild(prefetch);
+      link.dataset.prefetched = 'true';
+    }
+  });
+  </script>
 </body>
 </html>
