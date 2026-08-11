@@ -17,6 +17,7 @@ sections:
     paragraphs:
       - "Amateur golfers practise without a plan. They cycle through clubs at the range, hit driver until they're satisfied, and call it a session — with no idea where their game is actually bleeding strokes."
       - "Without shot-level data, there's no way to know whether you're more accurate with a 5-iron or a 6-iron, whether your driver is genuinely costing you, or whether that hour of practice made any difference at all."
+      - '<img src="/assets/images/projects/Approach_IQ/APP_IQ_FRONT.png" alt="Approach IQ app front page" />'
 
   - number: "02"
     heading: "The Build"
@@ -24,6 +25,7 @@ sections:
       - "I approached this like any product build — define the problem, write user stories, set acceptance criteria, then iterate until each feature lands. The difference: instead of handing a spec to a dev team, I used Kiro's spec-driven AI workflow to build through natural language conversation."
       - "Shot-plotting, club analytics, training recommendations — all delivered by articulating what the user needs clearly enough for an AI to execute on. GitHub tracks every iteration and hosts the live app."
 
+    
   - number: "03"
     heading: "Impact"
     list:
