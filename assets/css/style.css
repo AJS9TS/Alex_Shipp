@@ -460,19 +460,14 @@ section + section { border-top: 1px solid var(--line); }
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding-bottom: 16px;
   -webkit-overflow-scrolling: touch;
 }
 .carousel-track::-webkit-scrollbar {
-  height: 8px;
+  display: none;
 }
-.carousel-track::-webkit-scrollbar-track {
-  background: var(--bg-raised);
-  border-radius: 4px;
-}
-.carousel-track::-webkit-scrollbar-thumb {
-  background: var(--teal);
-  border-radius: 4px;
+.carousel-track {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .carousel-slide {
   flex: 0 0 80%;
