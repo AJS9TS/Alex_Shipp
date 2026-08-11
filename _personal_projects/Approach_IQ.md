@@ -12,11 +12,11 @@ demo_url: "https://ajs9ts.github.io/APPROACH_IQ/"
 code_url: "https://github.com/AJS9TS/Approach_IQ"
 
 gallery:
-  - src: "/Alex_Shipp/assets/images/projects/Approach_IQ/APP_IQ_FRONT.png"
+  - src: "/assets/images/projects/Approach_IQ/APP_IQ_FRONT.png"
     alt: "Approach IQ app front page"
-  - src: "/Alex_Shipp/assets/images/projects/Approach_IQ/APP_IQ_DETAILED.png"
+  - src: "/assets/images/projects/Approach_IQ/APP_IQ_DETAILED.png"
     alt: "Approach IQ Detailed Metric page"
-  - src: "/Alex_Shipp/assets/images/projects/Approach_IQ/APP_IQ_COACH.png"
+  - src: "/assets/images/projects/Approach_IQ/APP_IQ_COACH.png"
     alt: "Approach IQ app coach corner"
 
 sections:

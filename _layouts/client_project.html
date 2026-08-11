@@ -57,7 +57,7 @@ layout: default
     <div class="carousel-track" id="carouselTrack">
       {% for image in page.gallery %}
       <div class="carousel-slide" id="slide-{{ forloop.index0 }}">
-        <img src="{{ image.src }}" alt="{{ image.alt }}" />
+        <img src="{{ image.src | relative_url }}" alt="{{ image.alt }}" loading="lazy" />
       </div>
       {% endfor %}
     </div>
@@ -71,8 +71,12 @@ layout: default
     (function() {
       const track = document.getElementById('carouselTrack');
       const dots = document.querySelectorAll('.carousel-dot');
-      const slides = track.querySelectorAll('.carousel-slide img');
-      const images = Array.from(slides).map(function(img) { return img.src; });
+      const slideDivs = track.querySelectorAll('.carousel-slide');
+      const images = [];
+      slideDivs.forEach(function(slide) {
+        var img = slide.querySelector('img');
+        images.push(img ? img.getAttribute('src') : '');
+      });
       let currentIndex = 0;
 
       // Dot navigation
@@ -83,12 +87,10 @@ layout: default
         });
       });
       track.addEventListener('scroll', function() {
-        const scrollLeft = track.scrollLeft;
-        const allSlides = track.querySelectorAll('.carousel-slide');
         let closest = 0;
         let minDist = Infinity;
-        allSlides.forEach(function(slide, i) {
-          const dist = Math.abs(slide.offsetLeft - track.offsetLeft - scrollLeft);
+        slideDivs.forEach(function(slide, i) {
+          const dist = Math.abs(slide.offsetLeft - track.offsetLeft - track.scrollLeft);
           if (dist < minDist) { minDist = dist; closest = i; }
         });
         dots.forEach(function(d, i) {
@@ -99,10 +101,12 @@ layout: default
       // Lightbox
       var lightbox = document.createElement('div');
       lightbox.className = 'lightbox';
+      lightbox.setAttribute('role', 'dialog');
+      lightbox.setAttribute('aria-label', 'Image lightbox');
       lightbox.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button>' +
-        '<button class="lightbox-arrow lightbox-prev" aria-label="Previous">&#8249;</button>' +
+        '<button class="lightbox-arrow lightbox-prev" aria-label="Previous image">&#8249;</button>' +
         '<img class="lightbox-img" src="" alt="" />' +
-        '<button class="lightbox-arrow lightbox-next" aria-label="Next">&#8250;</button>';
+        '<button class="lightbox-arrow lightbox-next" aria-label="Next image">&#8250;</button>';
       document.body.appendChild(lightbox);
 
       var lbImg = lightbox.querySelector('.lightbox-img');
@@ -119,15 +123,18 @@ layout: default
         lbImg.src = images[currentIndex];
         updateArrows();
         lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
       }
 
       function closeLightbox() {
         lightbox.classList.remove('active');
+        document.body.style.overflow = '';
       }
 
-      slides.forEach(function(img, i) {
-        img.style.cursor = 'pointer';
-        img.addEventListener('click', function() { openLightbox(i); });
+      // Attach click to the entire slide div (not just the img)
+      slideDivs.forEach(function(slide, i) {
+        slide.style.cursor = 'pointer';
+        slide.addEventListener('click', function() { openLightbox(i); });
       });
 
       lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
