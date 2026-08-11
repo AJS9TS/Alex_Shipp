@@ -43,4 +43,17 @@ layout: default
     </div>
     {% endif %}
   </div>
+
+  {% if page.gallery %}
+  <div class="carousel">
+    <h2>Screenshots</h2>
+    <div class="carousel-track">
+      {% for image in page.gallery %}
+      <div class="carousel-slide">
+        <img src="{{ image.src }}" alt="{{ image.alt }}" />
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
 </div>

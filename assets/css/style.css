@@ -439,4 +439,56 @@ section + section { border-top: 1px solid var(--line); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .project-card { transition: none; }
+  .carousel-track { scroll-behavior: auto; }
+}
+
+/* ------------------------------------------------------------------
+   Image Carousel (scroll-snap)
+------------------------------------------------------------------ */
+.carousel {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+.carousel h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 16px;
+  -webkit-overflow-scrolling: touch;
+}
+.carousel-track::-webkit-scrollbar {
+  height: 8px;
+}
+.carousel-track::-webkit-scrollbar-track {
+  background: var(--bg-raised);
+  border-radius: 4px;
+}
+.carousel-track::-webkit-scrollbar-thumb {
+  background: var(--teal);
+  border-radius: 4px;
+}
+.carousel-slide {
+  flex: 0 0 80%;
+  scroll-snap-align: center;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-raised);
+}
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 560px) {
+  .carousel-slide {
+    flex: 0 0 92%;
+  }
 }
