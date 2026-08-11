@@ -1,10 +1,10 @@
 ---
 layout: client_project
 title: "Approach IQ"
-subtitle: "A data-driven golf practice app that identifies weaknesses and prescribes targeted training."
+subtitle: "A data-driven golf practice app that identifies weaknesses and encourages targeted training."
 slug: Approach_IQ
 model_name: "Golf_Game"
-summary: "A golf practice app that tracks shot data to pinpoint weaknesses and generate targeted training plans."
+summary: "A fun project that takes approach-shot data submitted from a golfer, identifies their largest weaknesses, highlights their biggest opportunity for growth and creates range-session improvement plans."
 order: 1
 thumbnail: /assets/images/projects/Approach_IQ/Approach_IQ.webp
 stack: ["Vibe Coding", "AWS Kiro", "AI", "HTML", "Github"]
