@@ -17,7 +17,7 @@ sections:
     paragraphs:
       - "Amateur golfers practise without a plan. They cycle through clubs at the range, hit driver until they're satisfied, and call it a session — with no idea where their game is actually bleeding strokes."
       - "Without shot-level data, there's no way to know whether you're more accurate with a 5-iron or a 6-iron, whether your driver is genuinely costing you, or whether that hour of practice made any difference at all."
-      - '<img src="/assets/images/projects/Approach_IQ/APP_IQ_FRONT.png" alt="Approach IQ app front page" />'
+      - '<img src="/Alex_Shipp/assets/images/projects/Approach_IQ/APP_IQ_FRONT.png" alt="Approach IQ app front page" />'
 
   - number: "02"
     heading: "The Build"
