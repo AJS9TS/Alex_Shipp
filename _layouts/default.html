@@ -74,8 +74,9 @@
       var link = e.target.closest('a');
       if (!link) return;
       var href = link.getAttribute('href');
-      // Skip external links, hash links, new-tab links, mailto, etc.
+      // Skip external links, hash links, new-tab links, mailto, downloads, etc.
       if (link.target === '_blank') return;
+      if (link.hasAttribute('download')) return;
       if (href.startsWith('#')) return;
       if (href.startsWith('mailto:')) return;
       if (link.hostname !== window.location.hostname) return;
