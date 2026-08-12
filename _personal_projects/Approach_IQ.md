@@ -10,6 +10,7 @@ thumbnail: /assets/images/projects/Approach_IQ/Approach_IQ.webp
 stack: ["Vibe Coding", "AWS Kiro", "AI", "HTML", "Github"]
 demo_url: "https://ajs9ts.github.io/APPROACH_IQ/"
 code_url: "https://github.com/AJS9TS/Approach_IQ"
+sample_data_url: "/assets/downloads/approach_iq_sample_data.csv"
 
 gallery:
   - src: "/assets/images/projects/Approach_IQ/APP_IQ_FRONT.png"

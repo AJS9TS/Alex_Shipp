@@ -49,6 +49,9 @@ layout: default
     <div class="carousel-header">
       <h2>Screenshots</h2>
       <div class="carousel-links">
+        {% if page.sample_data_url and page.sample_data_url != "" %}
+        <a class="btn btn-secondary" href="{{ page.sample_data_url | relative_url }}" download>Download sample data</a>
+        {% endif %}
         {% if page.demo_url and page.demo_url != "" %}
         <a class="btn btn-primary" href="{{ page.demo_url }}" target="_blank" rel="noopener">View live app &rarr;</a>
         {% endif %}
