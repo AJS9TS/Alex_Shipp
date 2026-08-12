@@ -73,17 +73,19 @@
     document.addEventListener('click', function(e) {
       var link = e.target.closest('a');
       if (!link) return;
+      var href = link.getAttribute('href');
       // Skip external links, hash links, new-tab links, mailto, etc.
       if (link.target === '_blank') return;
-      if (link.getAttribute('href').startsWith('#')) return;
-      if (link.getAttribute('href').startsWith('mailto:')) return;
+      if (href.startsWith('#')) return;
+      if (href.startsWith('mailto:')) return;
       if (link.hostname !== window.location.hostname) return;
+      // Skip links that are just anchors on the current page
+      if (link.pathname === window.location.pathname && link.hash) return;
 
       e.preventDefault();
-      var href = link.href;
       document.body.classList.add('page-leaving');
       setTimeout(function() {
-        window.location.href = href;
+        window.location.href = link.href;
       }, 300);
     });
 
