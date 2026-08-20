@@ -4,7 +4,7 @@ subtitle: "Established a standardised reporting model to support operational and
 slug: front_office_model_office
 model_name: "front_office_model_office"
 summary: "A standardised data model and Snowflake views used for global reporting."
-order: 1
+order: 2
 thumbnail: /assets/images/projects/FO/Conversion.png
 stack: ["Business Analysis", "Requirements Elicitation", "Stakeholder Management", "Process Flow Mapping", "Conversion Rate", "Project Management", "Agile Product Delivery", "Snowflake"]
 demo_url: ""
