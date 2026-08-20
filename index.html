@@ -15,7 +15,7 @@ layout: default
 <section id="about">
   <div class="wrap">
     <h2 class="reveal">About</h2>
-    <p class="reveal reveal-delay-1">{{ site.bio }}</p>
+    <div class="bio reveal reveal-delay-1">{{ site.bio | markdownify }}</div>
 
     <ul class="skills reveal reveal-delay-2">
       {% for skill in site.skills %}
