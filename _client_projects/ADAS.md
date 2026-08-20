@@ -5,7 +5,7 @@ slug: adas_reporting
 model_name: "adas_reporting"
 summary: "A single source of truth for Internal Audit Teams ensuring recalibration best practices are adhered to.  "
 order: 1
-thumbnail: assets\images\projects\ADAS\ADAS.jpg
+thumbnail: /assets/images/projects/ADAS/ADAS.jpg
 stack: ["Business Analysis", "Data Analysis", "Data Collection",  "Project Management", "Data Quality", "Tableau"]
 demo_url: ""
 
