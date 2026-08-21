@@ -3,10 +3,10 @@ layout: default
 ---
 
 <div class="wrap hero">
-  <div class="tagline">{{ site.tagline }}</div>
-  <h1>Hi, I'm {{ site.title | split: ' ' | first }},</h1>
-  <p class="lede">{{ site.description }}</p>
-  <div class="hero-actions">
+  <div class="tagline reveal">{{ site.tagline }}</div>
+  <h1 class="reveal reveal-delay-1">Hi, I'm {{ site.title | split: ' ' | first }},</h1>
+  <p class="lede reveal reveal-delay-2">{{ site.description }}</p>
+  <div class="hero-actions reveal reveal-delay-3">
     <a class="btn btn-primary" href="#projects">View projects</a>
     <a class="btn btn-secondary" href="mailto:{{ site.email }}">Get in touch</a>
   </div>
@@ -14,10 +14,10 @@ layout: default
 
 <section id="about">
   <div class="wrap">
-    <h2>About</h2>
-    <p>{{ site.bio }}</p>
+    <h2 class="reveal">About</h2>
+    <div class="bio reveal reveal-delay-1">{{ site.bio | markdownify }}</div>
 
-    <ul class="skills">
+    <ul class="skills reveal reveal-delay-2">
       {% for skill in site.skills %}
         <li>{{ skill }}</li>
       {% endfor %}
@@ -27,13 +27,13 @@ layout: default
 
 <section id="projects">
   <div class="wrap">
-    <h2>Selected Client Projects</h2>
-    <p class="muted">A few client projects that I am proud to have delivered.</p>
+    <h2 class="reveal">Selected Client Projects</h2>
+    <p class="muted reveal reveal-delay-1">A few client projects that I am proud to have worked on.</p>
 
     <div class="project-grid">
       {% assign client_projects = site.client_projects | sort: 'order' %}
       {% for project in client_projects %}
-      <div class="project-card">
+      <div class="project-card reveal">
         <a class="card-link" href="{{ project.url | relative_url }}">
           <div class="project-thumb">
             <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
@@ -57,13 +57,13 @@ layout: default
 
 <section id="personal_projects">
   <div class="wrap">
-    <h2>Selected Personal Projects</h2>
-    <p class="muted">A couple of personal projects, end to end — the problem, the model, and the impact.</p>
+    <h2 class="reveal">Selected Personal Projects</h2>
+    <p class="muted reveal reveal-delay-1">A couple of personal projects, end to end — the problem, the solution, and the impact.</p>
 
     <div class="project-grid">
       {% assign personal_projects = site.personal_projects | sort: 'order' %}
       {% for project in personal_projects %}
-      <div class="project-card">
+      <div class="project-card reveal">
         <a class="card-link" href="{{ project.url | relative_url }}">
           <div class="project-thumb">
             <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
@@ -81,15 +81,28 @@ layout: default
         </a>
       </div>
       {% endfor %}
+
+      <!-- Coming soon placeholder -->
+      <div class="project-card project-card--soon reveal">
+        <div class="card-link">
+          <div class="project-thumb">
+            <img src="{{ '/assets/images/projects/Coming_Soon/Coming_Soon.jpg' | relative_url }}" alt="Coming soon">
+          </div>
+          <div class="project-body">
+            <h3>Next project...</h3>
+            <p>Something new is in the works...</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="contact">
   <div class="wrap">
-    <h2>Let's talk...</h2>
-    <p class="muted">I am open to Business Analysis or Product Owner roles, and welcome you to reach out with any questions or opportunities.</p>
-    <div class="contact-actions">
+    <h2 class="reveal">Let's talk...</h2>
+    <p class="muted reveal reveal-delay-1">I am open to Business Analyst or Product Owner roles, and welcome you to reach out with any questions or opportunities.</p>
+    <div class="contact-actions reveal reveal-delay-2">
       <a class="btn btn-primary" href="mailto:{{ site.email }}">{{ site.email }}</a>
       {% if site.linkedin %}<a class="btn btn-secondary" href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
       {% if site.github %}<a class="btn btn-secondary" href="{{ site.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}

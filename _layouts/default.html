@@ -21,6 +21,7 @@
         <a href="{{ '/' | relative_url }}#about">About</a>
         <a href="{{ '/' | relative_url }}#projects">Projects</a>
         {% if site.linkedin %}<a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+        <a href="https://www.linkedin.com/in/alexander-shipp-557832209/details/recommendations/" target="_blank" rel="noopener">Testimonials</a>
         <a class="nav-cta" href="mailto:{{ site.email }}">Email me</a>
       </nav>
     </div>
@@ -36,5 +37,64 @@
     </div>
   </footer>
 
+  <script>
+  document.addEventListener('mouseover', function(e) {
+    const link = e.target.closest('a');
+    if (link && link.href && !link.dataset.prefetched) {
+      const prefetch = document.createElement('link');
+      prefetch.rel = 'prefetch';
+      prefetch.href = link.href;
+      document.head.appendChild(prefetch);
+      link.dataset.prefetched = 'true';
+    }
+  });
+
+  // Scroll-reveal with IntersectionObserver
+  (function() {
+    var reveals = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      // Fallback: show everything immediately
+      reveals.forEach(function(el) { el.classList.add('visible'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(function(el) { observer.observe(el); });
+  })();
+
+  // Smooth page transitions
+  (function() {
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a');
+      if (!link) return;
+      var href = link.getAttribute('href');
+      // Skip external links, hash links, new-tab links, mailto, downloads, etc.
+      if (link.target === '_blank') return;
+      if (link.hasAttribute('download')) return;
+      if (href.startsWith('#')) return;
+      if (href.startsWith('mailto:')) return;
+      if (link.hostname !== window.location.hostname) return;
+      // Skip links that are just anchors on the current page
+      if (link.pathname === window.location.pathname && link.hash) return;
+
+      e.preventDefault();
+      document.body.classList.add('page-leaving');
+      setTimeout(function() {
+        window.location.href = link.href;
+      }, 300);
+    });
+
+    // Fade in on page load
+    window.addEventListener('pageshow', function(e) {
+      document.body.classList.remove('page-leaving');
+    });
+  })();
+  </script>
 </body>
 </html>

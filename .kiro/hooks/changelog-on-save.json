@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Log changes on save",
+      "trigger": "PostFileSave",
+      "action": {
+        "type": "command",
+        "command": "powershell -Command \"$data = [Console]::In.ReadToEnd(); $timestamp = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'; Add-Content -Path 'CHANGELOG.md' -Value \\\"- [$timestamp] $data\\\"\""
+      },
+      "description": "Debug version - logs full stdin context to CHANGELOG.md to identify the correct field name.",
+      "enabled": true
+    }
+  ]
+}

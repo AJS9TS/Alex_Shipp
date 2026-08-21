@@ -1,32 +1,43 @@
 ---
+layout: client_project
 title: "Approach IQ"
-subtitle: "A data-driven golf practice app that identifies weaknesses and prescribes targeted training."
+subtitle: "A data-driven golf practice app that identifies weaknesses and encourages targeted training."
 slug: Approach_IQ
 model_name: "Golf_Game"
-summary: "An HTML project that allows users to edit the way they're practising their golf game.  "
+summary: "A fun project that takes approach-shot data submitted from a golfer, identifies their largest weaknesses, highlights their biggest opportunity for growth and creates range-session improvement plans."
 order: 1
-thumbnail: /assets/images/projects/Approach_IQ/Approach_IQ.svg
+thumbnail: /assets/images/projects/Approach_IQ/Approach_IQ.webp
 stack: ["Vibe Coding", "AWS Kiro", "AI", "HTML", "Github"]
-demo_url: ""
+demo_url: "https://ajs9ts.github.io/APPROACH_IQ/"
 code_url: "https://github.com/AJS9TS/Approach_IQ"
+sample_data_url: "/assets/downloads/approach_iq_sample_data.csv"
+
+gallery:
+  - src: "/assets/images/projects/Approach_IQ/APP_IQ_FRONT.png"
+    alt: "Approach IQ app front page"
+  - src: "/assets/images/projects/Approach_IQ/APP_IQ_DETAILED.png"
+    alt: "Approach IQ Detailed Metric page"
+  - src: "/assets/images/projects/Approach_IQ/APP_IQ_COACH.png"
+    alt: "Approach IQ app coach corner"
+
+sections:
+  - number: "01"
+    heading: "The Problem"
+    paragraphs:
+      - "Amateur golfers practise without a plan. They cycle through clubs at the range, hit driver until they run out of balls, and call it a session — with no idea where their game is actually bleeding strokes."
+      - "Without shot-level data, there's no way to know whether you're more accurate with a 5-iron or a 6-iron, whether your driver is genuinely costing you, or whether that hour of practice made any difference at all."
+
+  - number: "02"
+    heading: "The Build"
+    paragraphs:
+      - "I treated this the same way I'd treat any product — problem first, user stories, acceptance criteria, iterate. The only difference is I didn't have a dev team. I used AWS Kiro to build the whole thing, talking through what I needed and letting it write the code."
+      - "Shot-plotting, club analytics, training recommendations — all delivered by articulating what the user needs clearly enough for an AI to execute on.  Github acted as a great place to both host a live page, and manage version control across my iterations."
+
+    
+  - number: "03"
+    heading: "Impact"
+    list:
+        - "Golfers can log full rounds or track shots live — either way, the data builds up fast without getting in the way of actually playing."
+        - "Once there's enough data, it breaks things down club by club so you can see exactly where you're losing strokes instead of guessing."
+        - "From there it gives you a training plan focused on the stuff that'll actually move the needle on your handicap."
 ---
-<img width="420" height="462" alt="Image" src="https://github.com/user-attachments/assets/7e2753ff-be00-4930-aa3e-3b9605146c2f" />
-
-## The Problem
-
-Amateur golfers practise without a plan. They cycle through clubs at the range, hit driver until they're satisfied, and call it a session — with no idea where their game is actually bleeding strokes. Without shot-level data, there's no way to know whether you're more accurate with a 5-iron or a 6-iron, whether your driver is genuinely costing you, or whether that hour of practice made any difference at all.
-
-<img width="558" height="464" alt="image" src="https://github.com/user-attachments/assets/399aab20-a24f-49e3-8ded-11282e0f853f" />
-
-## The Build
-
-I approached this like any product build — define the problem, write user stories, set acceptance criteria, then iterate until each feature lands. The difference: instead of handing a spec to a dev team, I used Kiro's spec-driven AI workflow to build through natural language conversation. Shot-plotting, club analytics, training recommendations — all delivered by articulating what the user needs clearly enough for an AI to execute on. GitHub tracks every iteration and hosts the live app. 
-
-## Impact
-
-- Removes the guesswork from practice: golfers can log rounds in bulk or track every shot in real time, building a rich dataset with minimal friction.
-- Transforms scattered round data into actionable club-level insights — exposing exactly which part of the bag is bleeding strokes.
-- Delivers personalised training recommendations that prioritise the changes with the biggest scoring potential, turning data into lower handicaps. 
-
-<img width="514" height="488" alt="image" src="https://github.com/user-attachments/assets/1c45bf3c-a91e-4ef1-b472-53d05737789a" />
-

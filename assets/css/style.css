@@ -2,21 +2,21 @@
    Design tokens
 ------------------------------------------------------------------ */
 :root {
-  --bg: #F7F8F6;
-  --bg-raised: #FFFFFF;
-  --ink: #14181B;
-  --ink-soft: #4B5359;
-  --muted: #6B7280;
-  --line: #DCE0DD;
-  --teal: #2E6F6B;
-  --teal-dark: #1F4F4C;
-  --amber: #C97A2E;
+  --bg: #0A1F1A;
+  --bg-raised: #122B24;
+  --ink: #E8F0EC;
+  --ink-soft: #9BB5A8;
+  --muted: #A8C4B5;
+  --line: #1E3D33;
+  --teal: #4FD1B0;
+  --teal-dark: #38C49A;
+  --amber: #F6C254;
 
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  --max-width: 880px;
+  --max-width: 1100px;
   --radius: 10px;
 }
 
@@ -28,7 +28,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background: linear-gradient(to bottom, var(--bg) 0%, #5C7A5A 100%);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 17px;
@@ -167,10 +168,10 @@ p { margin: 0 0 1em; }
 }
 .btn-primary:hover { background: var(--teal); text-decoration: none; }
 .btn-secondary {
-  border: 1px solid var(--line);
-  color: var(--ink) !important;
+  border: 1px solid var(--teal);
+  color: var(--teal) !important;
 }
-.btn-secondary:hover { border-color: var(--teal); text-decoration: none; }
+.btn-secondary:hover { border-color: var(--amber); color: var(--amber) !important; text-decoration: none; }
 
 /* ------------------------------------------------------------------
    Sections
@@ -195,6 +196,24 @@ section + section { border-top: 1px solid var(--line); }
   padding: 6px 12px;
   border-radius: 6px;
   color: var(--ink-soft);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  cursor: default;
+}
+.skills li:hover {
+  transform: translateY(-3px);
+  border-color: var(--teal);
+}
+
+/* ------------------------------------------------------------------
+   Bio
+------------------------------------------------------------------ */
+.bio p {
+  color: var(--ink-soft);
+  font-size: 17px;
+  margin-bottom: 1em;
+}
+.bio p:last-child {
+  margin-bottom: 0;
 }
 
 /* ------------------------------------------------------------------
@@ -414,6 +433,10 @@ section + section { border-top: 1px solid var(--line); }
 /* ------------------------------------------------------------------
    Responsive
 ------------------------------------------------------------------ */
+@media (min-width: 1600px) {
+  :root { --max-width: 1320px; }
+}
+
 @media (max-width: 560px) {
   .hero { padding: 56px 0 40px; }
   section { padding: 40px 0; }
@@ -423,9 +446,234 @@ section + section { border-top: 1px solid var(--line); }
 }
 
 /* ------------------------------------------------------------------
+   Coming soon card
+------------------------------------------------------------------ */
+.project-card--soon {
+  border: 1px dashed var(--line);
+  opacity: 0.7;
+}
+.project-card--soon .card-link {
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.project-thumb--soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.coming-soon-label {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+
+/* ------------------------------------------------------------------
+   Scroll-reveal animations
+------------------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for child elements */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ------------------------------------------------------------------
+   Page transitions
+------------------------------------------------------------------ */
+body {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+body.page-leaving {
+  opacity: 0;
+}
+
+/* ------------------------------------------------------------------
    Reduced motion
 ------------------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .project-card { transition: none; }
+  .carousel-track { scroll-behavior: auto; }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  body { transition: none; }
+  body.page-leaving { opacity: 1; }
+}
+
+/* ------------------------------------------------------------------
+   Image Carousel (scroll-snap)
+------------------------------------------------------------------ */
+.carousel {
+  margin-top: 48px;
+  padding-top: 32px;
+  padding-bottom: 48px;
+}
+.carousel h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+.carousel-track {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.carousel-slide {
+  flex: 0 0 80%;
+  scroll-snap-align: center;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: none;
+  background: var(--bg-raised);
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+@media (max-width: 560px) {
+  .carousel-slide {
+    flex: 0 0 92%;
+  }
+}
+
+.carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.carousel-header h2 {
+  margin: 0;
+}
+.carousel-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--teal);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease;
+}
+.carousel-dot.active,
+.carousel-dot:hover {
+  background: var(--teal);
+}
+
+/* ------------------------------------------------------------------
+   Lightbox
+------------------------------------------------------------------ */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox.active {
+  display: flex;
+}
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 8px;
+  line-height: 1;
+}
+.lightbox-close:hover {
+  color: var(--teal);
+}
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+.lightbox-arrow:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.lightbox-arrow.hidden {
+  visibility: hidden;
+}
+.lightbox-prev {
+  left: 24px;
+}
+.lightbox-next {
+  right: 24px;
 }
