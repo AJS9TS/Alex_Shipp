@@ -204,6 +204,41 @@ section + section { border-top: 1px solid var(--line); }
   border-color: var(--teal);
 }
 
+/* About sub-section labels (Qualifications / Skills) */
+.about-subhead {
+  margin-top: 32px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* Qualifications reuse the chip layout but carry a teal accent to sit apart from skills */
+.qualifications {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 0;
+  list-style: none;
+}
+.qualifications li {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: var(--bg-raised);
+  border: 1px solid var(--teal);
+  border-left-width: 3px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: var(--teal);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  cursor: default;
+}
+.qualifications li:hover {
+  transform: translateY(-3px);
+}
+
 /* ------------------------------------------------------------------
    Bio
 ------------------------------------------------------------------ */
