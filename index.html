@@ -17,6 +17,16 @@ layout: default
     <h2 class="reveal">About</h2>
     <div class="bio reveal reveal-delay-1">{{ site.bio | markdownify }}</div>
 
+    {% if site.qualifications %}
+    <h3 class="about-subhead reveal reveal-delay-2">Qualifications</h3>
+    <ul class="qualifications reveal reveal-delay-2">
+      {% for qualification in site.qualifications %}
+        <li>{{ qualification }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    <h3 class="about-subhead reveal reveal-delay-2">Skills</h3>
     <ul class="skills reveal reveal-delay-2">
       {% for skill in site.skills %}
         <li>{{ skill }}</li>
@@ -81,19 +91,6 @@ layout: default
         </a>
       </div>
       {% endfor %}
-
-      <!-- Coming soon placeholder -->
-      <div class="project-card project-card--soon reveal">
-        <div class="card-link">
-          <div class="project-thumb">
-            <img src="{{ '/assets/images/projects/Coming_Soon/Coming_Soon.jpg' | relative_url }}" alt="Coming soon">
-          </div>
-          <div class="project-body">
-            <h3>Next project...</h3>
-            <p>Something new is in the works...</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
